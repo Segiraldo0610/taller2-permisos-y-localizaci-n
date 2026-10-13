@@ -7,10 +7,7 @@
 
 ## Convención de ramas
 
-- `feature/media-capture`
-- `feature/media-picker`
-- `feature/current-location`
-- `feature/light-sensor-style`
-- `feature/location-polyline`
-- `feature/geocoding`
-- `feature/reverse-geocoding`
+- `feature/multimedia-sebastian`: base, navegación, foto, video y galería.
+- `feature/mapas-samuel`: ubicación, sensor, `Polyline` y `Geocoder`.
+
+Cada integrante revisa y ejecuta los criterios de aceptación de la rama del otro antes de integrarla en `main`.

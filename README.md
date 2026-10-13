@@ -5,6 +5,25 @@ Repositorio de trabajo para el Taller 2 de Computación móvil de la Pontificia 
 **Entrega:** viernes 16 de octubre de 2026 a las 11:59 p. m.  
 **Modalidad:** individual o en grupos de dos. Se permiten varios envíos, pero el Campus conserva únicamente el último.
 
+**Integrantes:** Sebastián Peralta Neme y Samuel Giraldo.
+
+## Estado de implementación
+
+- [x] Proyecto Android compilable con Kotlin y Jetpack Compose.
+- [x] Arquitectura Single Activity; `MainActivity.kt` no declara composables.
+- [x] Navigation 3 con destinos Inicio, Multimedia y Mapa.
+- [x] Temas claro y oscuro y textos visibles en `strings.xml`.
+- [x] Selector Foto/Video.
+- [x] Captura de foto y video mediante Activity Result y `FileProvider`.
+- [x] Selección de foto y video mediante Photo Picker.
+- [x] Vista previa centrada con tamaño fijo.
+- [x] Ktor 3.5.2 declarado y punto de creación centralizado en `HttpClientProvider`.
+- [ ] Ubicación, mapa, sensor, `Polyline` y `Geocoder`.
+
+La implementación de Sebastián se desarrolla en la rama `feature/multimedia-sebastian`.
+El contraste detallado entre la implementación, la rúbrica y las pruebas pendientes está en
+[`docs/VERIFICACION_RUBRICA.md`](docs/VERIFICACION_RUBRICA.md).
+
 ## Objetivo
 
 Construir una aplicación Android en Kotlin y Jetpack Compose que integre captura y selección de contenido multimedia, permisos en tiempo de ejecución, localización, Google Maps, sensor de luminosidad, trazado de recorridos y geocodificación directa e inversa.
@@ -53,7 +72,7 @@ Las versiones siguientes cumplen la rúbrica y corresponden a versiones publicad
 
 | Componente | Versión |
 |---|---:|
-| `compileSdk` | 36 o superior |
+| `compileSdk` | 37 |
 | `minSdk` | 23 o superior |
 | Navigation 3 | 1.1.7 |
 | Ktor | 3.5.2 |
@@ -70,8 +89,8 @@ mapsCompose = "8.4.0"
 playServicesLocation = "21.4.0"
 
 [libraries]
-navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "navigation3" }
-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "navigation3" }
+androidx-navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "navigation3" }
+androidx-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "navigation3" }
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
 maps-compose = { module = "com.google.maps.android:maps-compose", version.ref = "mapsCompose" }
@@ -82,7 +101,7 @@ En `app/build.gradle.kts`:
 
 ```kotlin
 android {
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 23
@@ -90,8 +109,8 @@ android {
 }
 
 dependencies {
-    implementation(libs.navigation3.runtime)
-    implementation(libs.navigation3.ui)
+    implementation(libs.androidx.navigation3.runtime)
+    implementation(libs.androidx.navigation3.ui)
     implementation(libs.ktor.client.core)
     implementation(libs.ktor.client.android)
     implementation(libs.maps.compose)
@@ -109,6 +128,16 @@ Permisos mínimos en `AndroidManifest.xml`:
 ```
 
 Para seleccionar fotos y videos se recomienda el Photo Picker de Android, que no solicita acceso general a toda la galería. El permiso de cámara y los permisos de ubicación sí deben solicitarse durante la ejecución.
+
+## Compilación local
+
+El proyecto incluye Gradle Wrapper. Desde la raíz del repositorio:
+
+```powershell
+.\gradlew.bat :app:assembleDebug
+```
+
+El APK resultante se genera en `app/build/outputs/apk/debug/app-debug.apk`.
 
 ## API key de Google Maps
 
@@ -136,7 +165,7 @@ app/src/main/java/.../
 │   ├── LocationClient.kt
 │   └── GeocoderExtensions.kt
 ├── sensors/LightSensorObserver.kt
-└── data/HttpClientProvider.kt
+└── network/HttpClientProvider.kt
 ```
 
 ## Entregables
