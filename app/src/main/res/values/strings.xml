@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Taller 2</string>
+    <string name="home_title">Permisos y localización</string>
+    <string name="home_subtitle">Selecciona el módulo que deseas probar</string>
+    <string name="media_title">Cámara y galería</string>
+    <string name="media_description">Captura o selecciona fotografías y videos.</string>
+    <string name="map_title">Mapa y recorrido</string>
+    <string name="map_description">Ubicación actual, recorrido y búsqueda de direcciones.</string>
+    <string name="open_media">Abrir cámara y galería</string>
+    <string name="open_map">Abrir mapa</string>
+    <string name="back">Volver</string>
+    <string name="photo">Foto</string>
+    <string name="video">Video</string>
+    <string name="media_mode">Tipo de contenido</string>
+    <string name="take_photo">Tomar foto</string>
+    <string name="record_video">Grabar video</string>
+    <string name="select_photo">Seleccionar foto</string>
+    <string name="select_video">Seleccionar video</string>
+    <string name="media_preview">Vista previa del contenido</string>
+    <string name="media_source_camera">Origen: cámara</string>
+    <string name="media_source_gallery">Origen: galería</string>
+    <string name="no_media">Aún no se ha capturado o seleccionado contenido.</string>
+    <string name="camera_permission_denied">Se necesita el permiso de cámara para realizar la captura.</string>
+    <string name="capture_cancelled">La captura fue cancelada.</string>
+    <string name="selection_cancelled">La selección fue cancelada.</string>
+    <string name="camera_unavailable">No fue posible abrir la cámara del dispositivo.</string>
+    <string name="dismiss_message">Cerrar mensaje</string>
+    <string name="map_pending_title">Mapa en construcción</string>
+    <string name="map_pending_description">Samuel implementará en este destino la ubicación, la ruta, el sensor de luz y Geocoder.</string>
+</resources>
