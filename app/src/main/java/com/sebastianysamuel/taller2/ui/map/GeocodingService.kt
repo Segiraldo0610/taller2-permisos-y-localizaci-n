@@ -17,7 +17,7 @@ class GeocodingService(context: Context) {
         val address = addressesFromName(query).firstOrNull() ?: return null
         return MapMarker(
             point = RoutePoint(address.latitude, address.longitude),
-            title = address.readableAddress(query),
+            title = address.readableAddress(query) ?: query,
         )
     }
 
