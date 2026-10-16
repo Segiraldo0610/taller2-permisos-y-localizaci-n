@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Taller 2 - prueba de recorrido" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Ruta simulada cerca de la Universidad Javeriana</name>
+    <desc>Recorrido de prueba para el emulador Android. No representa un trayecto real por calles.</desc>
+  </metadata>
+  <trk>
+    <name>Prueba de Polyline</name>
+    <trkseg>
+      <trkpt lat="4.62850" lon="-74.06490"><ele>2600</ele><time>2026-10-16T15:00:00Z</time></trkpt>
+      <trkpt lat="4.62862" lon="-74.06486"><ele>2600</ele><time>2026-10-16T15:00:10Z</time></trkpt>
+      <trkpt lat="4.62875" lon="-74.06482"><ele>2600</ele><time>2026-10-16T15:00:20Z</time></trkpt>
+      <trkpt lat="4.62888" lon="-74.06478"><ele>2600</ele><time>2026-10-16T15:00:30Z</time></trkpt>
+      <trkpt lat="4.62900" lon="-74.06473"><ele>2600</ele><time>2026-10-16T15:00:40Z</time></trkpt>
+      <trkpt lat="4.62913" lon="-74.06469"><ele>2600</ele><time>2026-10-16T15:00:50Z</time></trkpt>
+      <trkpt lat="4.62926" lon="-74.06465"><ele>2600</ele><time>2026-10-16T15:01:00Z</time></trkpt>
+      <trkpt lat="4.62938" lon="-74.06460"><ele>2600</ele><time>2026-10-16T15:01:10Z</time></trkpt>
+      <trkpt lat="4.62951" lon="-74.06456"><ele>2600</ele><time>2026-10-16T15:01:20Z</time></trkpt>
+      <trkpt lat="4.62964" lon="-74.06451"><ele>2600</ele><time>2026-10-16T15:01:30Z</time></trkpt>
+      <trkpt lat="4.62977" lon="-74.06446"><ele>2600</ele><time>2026-10-16T15:01:40Z</time></trkpt>
+      <trkpt lat="4.62990" lon="-74.06441"><ele>2600</ele><time>2026-10-16T15:01:50Z</time></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
