@@ -1,5 +1,4 @@
 name: Integrar trabajo de Samuel
-# Ejecución actualizada
 
 on:
   push:
@@ -23,8 +22,8 @@ jobs:
           git config user.name "Samuel Giraldo"
           git config user.email "Segiraldo0610@users.noreply.github.com"
           base64 --decode .github/workflows/cambios.b64 | tar -xJf -
+          rm .github/workflows/android.yml
           git rm app/src/main/java/com/sebastianysamuel/taller2/ui/map/MapPlaceholderScreen.kt
-          git rm .github/workflows/bootstrap.yml .github/workflows/cambios.b64
-          git add -A
+          git add README.md app docs gradle gradlew
           git commit -m "feat: completar mapas y preparar la entrega"
           git push
