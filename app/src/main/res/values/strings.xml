@@ -26,6 +26,17 @@
     <string name="selection_cancelled">La selección fue cancelada.</string>
     <string name="camera_unavailable">No fue posible abrir la cámara del dispositivo.</string>
     <string name="dismiss_message">Cerrar mensaje</string>
-    <string name="map_pending_title">Mapa en construcción</string>
-    <string name="map_pending_description">Samuel implementará en este destino la ubicación, la ruta, el sensor de luz y Geocoder.</string>
+    <string name="address_search_label">Buscar dirección</string>
+    <string name="address_search_example">Ej. Universidad Javeriana, Bogotá</string>
+    <string name="search_address">Buscar dirección</string>
+    <string name="current_location">Ubicación actual</string>
+    <string name="selected_location">Punto seleccionado</string>
+    <string name="location_permission_required">Activa la ubicación para mostrar tu posición y registrar el recorrido.</string>
+    <string name="grant_permission">Permitir</string>
+    <string name="location_permission_denied">Sin permiso de ubicación. Puedes concederlo cuando quieras.</string>
+    <string name="location_unavailable">No fue posible obtener la ubicación actual.</string>
+    <string name="address_not_found">No se encontró una dirección para ese punto.</string>
+    <string name="geocoding_unavailable">El servicio de geocodificación no está disponible en este momento.</string>
+    <string name="map_lux_value">Luz: %1$.1f lux</string>
+    <string name="map_lux_unavailable">Sensor de luz no disponible</string>
 </resources>

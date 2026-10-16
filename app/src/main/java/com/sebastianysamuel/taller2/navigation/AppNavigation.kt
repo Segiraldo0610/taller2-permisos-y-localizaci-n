@@ -5,7 +5,7 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import com.sebastianysamuel.taller2.ui.home.HomeScreen
-import com.sebastianysamuel.taller2.ui.map.MapPlaceholderScreen
+import com.sebastianysamuel.taller2.ui.map.MapScreen
 import com.sebastianysamuel.taller2.ui.media.MediaScreen
 
 @Composable
@@ -26,7 +26,7 @@ fun AppNavigation() {
                 MediaScreen(onBack = { backStack.removeLastOrNull() })
             }
             entry<MapRoute> {
-                MapPlaceholderScreen(onBack = { backStack.removeLastOrNull() })
+                MapScreen(onBack = { backStack.removeLastOrNull() })
             }
         },
     )

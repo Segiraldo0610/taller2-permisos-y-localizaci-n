@@ -334,7 +334,7 @@ private fun MediaPreview(
                     .build(),
                 contentDescription = stringResource(R.string.media_preview),
                 modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.Crop,
+                contentScale = ContentScale.Fit,
             )
 
             else -> key(uri) {

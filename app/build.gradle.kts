@@ -1,7 +1,16 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlin.serialization)
+}
+
+val localProperties = Properties().apply {
+    val propertiesFile = rootProject.file("local.properties")
+    if (propertiesFile.exists()) {
+        propertiesFile.inputStream().use(::load)
+    }
 }
 
 android {
@@ -14,6 +23,7 @@ android {
         targetSdk = 37
         versionCode = 1
         versionName = "1.0"
+        manifestPlaceholders["MAPS_API_KEY"] = localProperties.getProperty("MAPS_API_KEY", "")
     }
 
     buildFeatures {
@@ -59,4 +69,6 @@ dependencies {
     implementation(libs.ktor.client.android)
     implementation(libs.maps.compose)
     implementation(libs.play.services.location)
+
+    testImplementation(libs.junit)
 }

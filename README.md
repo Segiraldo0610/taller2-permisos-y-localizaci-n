@@ -9,6 +9,8 @@ Repositorio de trabajo para el Taller 2 de Computación móvil de la Pontificia 
 
 ## Estado de implementación
 
+Las funcionalidades exigidas están implementadas en código. Antes de entregar todavía se deben ejecutar las pruebas manuales indicadas al final de este documento en el celular o emulador usado para el video.
+
 - [x] Proyecto Android compilable con Kotlin y Jetpack Compose.
 - [x] Arquitectura Single Activity; `MainActivity.kt` no declara composables.
 - [x] Navigation 3 con destinos Inicio, Multimedia y Mapa.
@@ -18,9 +20,14 @@ Repositorio de trabajo para el Taller 2 de Computación móvil de la Pontificia 
 - [x] Selección de foto y video mediante Photo Picker.
 - [x] Vista previa centrada con tamaño fijo.
 - [x] Ktor 3.5.2 declarado y punto de creación centralizado en `HttpClientProvider`.
-- [ ] Ubicación, mapa, sensor, `Polyline` y `Geocoder`.
+- [x] Mapa con marcador de ubicación actual y manejo del permiso en tiempo de ejecución.
+- [x] Cambio de estilo del mapa con el sensor de luminosidad.
+- [x] Recorrido mediante `Polyline` a partir de actualizaciones de ubicación.
+- [x] Búsqueda de direcciones mediante geocodificación directa.
+- [x] Marcador por pulsación prolongada con geocodificación inversa.
 
 La implementación de Sebastián se desarrolla en la rama `feature/multimedia-sebastian`.
+La integración de mapas y entrega se desarrolla en la rama `feature/mapas-samuel`.
 El contraste detallado entre la implementación, la rúbrica y las pruebas pendientes está en
 [`docs/VERIFICACION_RUBRICA.md`](docs/VERIFICACION_RUBRICA.md).
 
@@ -147,7 +154,7 @@ Crea una clave en Google Cloud, habilita Maps SDK for Android y agrégala al pro
 MAPS_API_KEY=TU_API_KEY
 ```
 
-Después expón `MAPS_API_KEY` al `AndroidManifest.xml` mediante la configuración de Gradle usada por el proyecto.
+El proyecto lee esa propiedad desde `app/build.gradle.kts` y la expone al `AndroidManifest.xml` mediante un `manifestPlaceholder`. `local.properties` está ignorado por Git y la clave no debe subirse al repositorio.
 
 ## Estructura sugerida
 
@@ -156,15 +163,19 @@ app/src/main/java/.../
 ├── MainActivity.kt
 ├── navigation/
 │   ├── AppNavigation.kt
-│   └── Routes.kt
+│   └── AppRoute.kt
 ├── ui/
 │   ├── home/HomeScreen.kt
-│   ├── media/MediaScreen.kt
-│   └── map/MapScreen.kt
-├── location/
-│   ├── LocationClient.kt
-│   └── GeocoderExtensions.kt
-├── sensors/LightSensorObserver.kt
+│   ├── media/
+│   │   ├── MediaScreen.kt
+│   │   ├── MediaViewModel.kt
+│   │   └── MediaFileProvider.kt
+│   └── map/
+│       ├── MapScreen.kt
+│       ├── MapViewModel.kt
+│       ├── LocationTracker.kt
+│       ├── LightSensorObserver.kt
+│       └── GeocodingService.kt
 └── network/HttpClientProvider.kt
 ```
 
@@ -179,6 +190,8 @@ app/src/main/java/.../
    - implementación de Geocoder;
    - partes del código responsables de cada requisito.
 
+El orden sugerido para la grabación está en [`docs/GUION_VIDEO.md`](docs/GUION_VIDEO.md).
+
 ## Lista de control antes de entregar
 
 - [ ] La aplicación compila y abre sin cerrarse inesperadamente.
@@ -192,4 +205,4 @@ app/src/main/java/.../
 - [ ] El LongClick crea un marcador con una dirección legible.
 - [ ] Se generaron ZIP/RAR, APK y enlace de video.
 
-La especificación completa y las decisiones técnicas están documentadas en la [Wiki del repositorio](../../wiki).
+La correspondencia entre cada criterio, el código y su prueba manual está documentada en [`docs/VERIFICACION_RUBRICA.md`](docs/VERIFICACION_RUBRICA.md).
