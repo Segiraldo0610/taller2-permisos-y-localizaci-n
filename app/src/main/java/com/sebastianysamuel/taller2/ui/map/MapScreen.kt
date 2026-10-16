@@ -233,19 +233,19 @@ fun MapScreen(
             ) {
                 state.currentLocation?.let { point ->
                     Marker(
-                        state = MarkerState(point.toLatLng()),
+                        state = remember(point) { MarkerState(point.toLatLng()) },
                         title = stringResource(R.string.current_location),
                     )
                 }
                 state.searchMarker?.let { marker ->
                     Marker(
-                        state = MarkerState(marker.point.toLatLng()),
+                        state = remember(marker.point) { MarkerState(marker.point.toLatLng()) },
                         title = marker.title,
                     )
                 }
                 state.selectedMarker?.let { marker ->
                     Marker(
-                        state = MarkerState(marker.point.toLatLng()),
+                        state = remember(marker.point) { MarkerState(marker.point.toLatLng()) },
                         title = marker.title.ifBlank {
                             stringResource(R.string.selected_location)
                         },
